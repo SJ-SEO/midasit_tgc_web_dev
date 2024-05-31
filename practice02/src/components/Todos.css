@@ -55,18 +55,4 @@ li {
     border-color: rgb(210, 210, 210);
     list-style-type: none;
     font-size: calc(4px + 2vmin);
-  }
-
-.TodoList .todo_incompleted {
-  color:black;
-  /* list-style: circle; */
-}
-
-.TodoList .todo_completed {
-  color: gray;
-  text-decoration: line-through 1px;
-  list-style: disc;
-}
-.TodoList .todo_completed::marker {
-  content: "✔ ";
 }

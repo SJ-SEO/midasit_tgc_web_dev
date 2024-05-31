@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import './Todos.css';
+import Todo from './Todo'
 import useTodos from '../hooks/useTodos'
 import iconAdd from '../resource/icon_add.png'
 import iconDelete from '../resource/icon_delete.png'
@@ -43,11 +44,11 @@ function Todos() {
   //   return todo.completed
   // }
 
-  function onClickTodo(todo) {
+  // function onClickTodo(todo) {
     // console.log(todo.id, todo.todo, todo.completed)
     // switchCompleted(todo)
     // console.log(todo.id, todo.todo, todo.completed)
-  }
+  // }
 
   return (
     <div className="Todos">
@@ -64,18 +65,14 @@ function Todos() {
           </div>
         </div>
         <div className="TodoControl">
-          <img src={iconAdd} onClick={onAdd} id="icon_add"/>
-          <img src={iconDelete} onClick={onDelete} id="icon_delete"/>
+          <img src={iconAdd} onClick={onAdd} id="icon_add" alt="add icon"/>
+          <img src={iconDelete} onClick={onDelete} id="icon_delete" alt="delete icon"/>
         </div>
       </div>
       <div className="TodoList">
         <ul>
           {
-              // todos 배열을 순회하며 각각의 요소를 <li> 태그를 사용하여 출력합니다.
-              // 이렇게 반복되는 요소에 key라는 프로퍼티가 빠지면 콘솔에 경고가 뜹니다.
-            todos.map((todo)=><li key={todo.id} className={todo.completed === true ? "todo_completed" : "todo_incompleted"} onClick={()=>onClickTodo(todo)}>
-              {todo.todo}
-              </li>)
+              todos.map((todo)=><Todo todo={todo} />)
           }
         </ul>
       </div>
